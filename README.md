@@ -1,16 +1,6 @@
 # OpenVPN-Stats
 
-Python script to display statistics for open vpn
-
-
-How to run the script with a cron:
-```
-  #this will start the webserver displaing the statistics
-  @reboot /usr/bin/python /home/pi/scripts/ovpnstats/openvpn_display_html.py
-
-  #this will fetch and agregate stats each minute
-  */1 * * * * sudo /usr/bin/python /home/pi/scripts/ovpnstats/openvpn_stats.py /dev/null 2>&1
-```
+Python script to display traffic statistics for OpenVPN server.
 
 After running openvpn_display_html.py it will create a webserver on port:8075 to display the statistics.
 You can change this port by modifying the last line of the script.
@@ -31,3 +21,15 @@ Common Name               Real Address         Download        Upload           
 hjelev                    85.118.92.81          1.61 MB      10.30 MB  Wed Jan 25 15:23:01 2017
 user4                     46.47.84.49         221.06 MB     806.24 MB  Mon Feb 13 00:49:54 2017
 ```
+
+How to run the script with a cron:
+
+```
+  #this will start the webserver displaing the statistics
+  @reboot sudo /usr/bin/python /home/pi/scripts/ovpnstats/openvpn_display_html.py
+
+  #this will fetch and agregate stats each minute
+  */1 * * * * sudo /usr/bin/python /home/pi/scripts/ovpnstats/openvpn_stats.py /dev/null 2>&1
+```
+
+How to restart the statistics? Just delete the content of your "bd" folder, all files will be recreated once users connect to the vpn.
