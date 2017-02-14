@@ -39,3 +39,5 @@ Add this to your crontab:
 How to restart the statistics? 
 
 Just delete the content of your "db" folder, all files will be recreated once users connect to the vpn.
+
+OpenVPN-Stats is based on https://sigterm.sh/2009/07/16/simple-openvpn-server-statistics/, it adds aggregation of the data and a convenient way to display it online.
