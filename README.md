@@ -2,6 +2,8 @@
 
 Python script to display traffic statistics for OpenVPN server.
 
+This script uses web.py module. You can get it from here http://webpy.org/
+
 After running openvpn_display_html.py it will create a webserver on port:8075 to display the statistics.
 You can change this port by modifying the last line of the script.
 
