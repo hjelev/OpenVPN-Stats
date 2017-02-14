@@ -22,7 +22,9 @@ hjelev                    85.118.92.81          1.61 MB      10.30 MB  Wed Jan 2
 user4                     46.47.84.49         221.06 MB     806.24 MB  Mon Feb 13 00:49:54 2017
 ```
 
-How to run the script with a cron:
+How to run the script on system restart?
+
+Add this to your crontab:
 
 ```
   #this will start the webserver displaing the statistics
@@ -32,4 +34,6 @@ How to run the script with a cron:
   */1 * * * * sudo /usr/bin/python /home/pi/scripts/ovpnstats/openvpn_stats.py /dev/null 2>&1
 ```
 
-How to restart the statistics? Just delete the content of your "bd" folder, all files will be recreated once users connect to the vpn.
+How to restart the statistics? 
+
+Just delete the content of your "db" folder, all files will be recreated once users connect to the vpn.
